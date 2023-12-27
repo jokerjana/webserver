@@ -26,9 +26,20 @@ Serving the HTML pages.
 
 Testing the webserver
 
-## PROGRAM:
+## PROGRAM:from http.server import HTTPServer,BaseHTTPRequestHandler
+content="""
+## WELCOME
+"""
+class HelloHandler(BaseHTTPRequestHandler): def do_GET (self): self.send_response (200) self.send_header('Content-type', 'text/html; charset=utf-8') Self.end_headers() self.wfile.write(content.encode())
+
+server_address = ('', 80) httpd = HTTPServer (server_address, HelloHandler) httpd.serve_for
+
+Type your code here
+
 
 ## OUTPUT:
+![Screenshot 2023-12-27 202256](https://github.com/jokerjana/webserver/assets/147173630/3c5010b5-07ac-41d2-beb7-760b6687b451)
+
 
 ## RESULT:
 The program is executed succesfully
